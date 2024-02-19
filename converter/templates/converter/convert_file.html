@@ -1,0 +1,20 @@
+<!-- converter/templates/converter/convert_file.html -->
+{% extends 'base.html' %}
+{% load static %}
+
+{% block content %}
+  <header>
+    <a href="{% url 'home' %}" class="back-button">&lt; Back to Home</a>
+  </header>
+
+  {% if converted_files %}
+    <div class="conversion-success">
+      <h1>Your PDF has been converted to an editable WORD document</h1>
+      <div class="download-button-container">
+        <a href="{% url 'view_converted_file' converted_files.last.id %}" download class="download-button">
+          Download Word
+        </a>
+      </div>
+    </div>
+  {% endif %}
+{% endblock %}

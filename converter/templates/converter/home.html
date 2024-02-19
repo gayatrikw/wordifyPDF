@@ -1,0 +1,24 @@
+<!-- pdf_converter/templates/home.html -->
+{% extends 'base.html' %}
+{% load static %}
+
+{% block content %}
+  <div class="container">
+    <div class="welcome-section">
+      <h1 class="welcome-heading"><b>PDF to WORD Converter</b></h1>
+      <p class="welcome-text">Convert your PDF to WORD documents with incredible accuracy.</p>
+
+      <!-- Add the following form -->
+      <form class="conversion-form" method="post" action="{% url 'convert_file' %}" enctype="multipart/form-data">
+        {% csrf_token %}
+        <label for="pdf_file" class="form-label">Upload a PDF file:</label>
+        <input type="file" name="file" accept=".pdf" class="form-input" required>
+        <button type="submit" class="form-button">Convert to Word</button>
+      </form>
+    </div>
+  </div>
+{% endblock %}
+
+{% block footer %}
+    <p>&copy; WordifyPDF 2024 ® - Your PDF Editor</p>
+{% endblock %}

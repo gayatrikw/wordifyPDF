@@ -1,0 +1,24 @@
+<!-- converter/templates/converter/file_list.html -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Converted Files List</title>
+</head>
+<body>
+
+<h2>Converted Files List</h2>
+
+{% if files %}
+  <ul>
+    {% for file in files %}
+      <li><a href="{{ file.converted_file.url }}">{{ file.converted_file.name }}</a> - {{ file.created_at }}</li>
+    {% endfor %}
+  </ul>
+{% else %}
+  <p>No converted files yet.</p>
+{% endif %}
+
+</body>
+</html>

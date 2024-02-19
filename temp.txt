@@ -1,0 +1,765 @@
+Vision Based Identification of Rural and Urban 
+Surroundings 
+ 
+                    Swati Shilaskar 
+                        Gayatri Waghmare                                               Tejal Deshmukh  
+ Vishwakarma Institute of Technology        Vishwakarma Institute of Technology            Vishwakarma Institute of Technology  
+   Bibwewadi, Pune 411037                           Bibwewadi, Pune 411037                              Bibwewadi, Pune 411037  
+     Email: swati.shilaskar@vit.edu                 Email: keshav.gayatri21@vit.edu                   Email: tejal.deshamukh21@vit.edu 
+ 
+                 Nikhil Dharangutte                                      Mayur Devle                                              Shripad Bhatlawande 
+ Vishwakarma Institute of Technology      Vishwakarma Institute of Technology            Vishwakarma Institute of Technology  
+           Bibwewadi, Pune 411037                          Bibwewadi, Pune 411037                                Bibwewadi, Pune 411037  
+  Email: nikhil.dharangutte21@vit.edu           Email: mayur.devle21@vit.edu                  Email: shripad.bhatlawande@vit.edu 
+ 
+ 
+Abstract– The study aims to use machine learning (ML) 
+classifiers to identify whether an image is taken in a rural 
+or urban area. The proposed system is built using 
+supervised learning techniques, where a labelled dataset of 
+images is used to train the machine learning classifiers. The 
+system uses a combination of feature extraction and 
+classification algorithms to accurately classify images as 
+rural or urban. The proposed system used BRISK feature 
+description technique. These descriptive features would 
+then be fed into several machine learning (ML) classifiers, 
+such as Random Forest (RF), K-Nearest Neighbors (KNN), 
+Decision Tree, Logistics Regression and Support Vector 
+Machines (SVM) to perform classification. Random Forest 
+provides high accuracy as 99.82% when the number of 
+clusters K is 3. The proposed system has practical 
+applications in many fields such as environmental 
+monitoring, land-usage planning, and disaster response. By 
+accurately identifying rural and urban surroundings, the 
+system can provide critical information for policy makers 
+and researchers to make informed decisions about land 
+usage and resource allocation. 
+ 
+Keywords: Rural and Urban identification, BRISK, ML 
+Classifiers.  
+ 
+I. 
+INTRODUCTION 
+      Recent years have seen the quick development of computer 
+vision algorithms and it is now possible because of technology 
+for remote sensing to automatically differentiate between rural 
+and urban areas with high accuracy and efficiency. This has 
+wide-ranging practical applications, such as land-usage 
+planning, environmental monitoring, disaster solution, and 
+public health. 
+This paper reviews the traditional feature-based methods used 
+for rural-urban identification, which have several limitations, 
+including low accuracy and time-consuming processing. Then 
+it introduces machine learning methods, which have been 
+shown to provide higher accuracies and faster processing times. 
+We look at the difficulties and possibilities facing this study 
+area, including the requirement for extensive and varied 
+datasets, the interpretability of models, and the ethical issues 
+surrounding the application of such technology. 
+Machine learning algorithm’s advancement has brought up new 
+prospects for automatic and efficient rural-urban classification. 
+Machine learning algorithms can learn from large amounts of 
+labelled data and extract features automatically, making them 
+highly efficient and accurate for identifying rural and urban 
+environments. This study gives a summary of the state-of-the-
+art machine learning classifiers for rural-urban categorization 
+based on photos from remote sensing.  
+II. 
+LITERATURE REVIEW 
+ 
+This paper is a review of the research trends in the field of 
+evaluation of an city area using google map images. The 
+authors summarize the main methods used to analyze street 
+view images, including computer vision techniques, deep 
+learning algorithms, and geographical information systems 
+(GIS). They also highlight the challenges and limitations of 
+using pictures from street view of cities regions assessment and 
+provide suggestions for future research[1]. 
+This study introduces a novel method for identifying land uses 
+based on gray-level vector reduction and frequency-based 
+contextual categorization. The authors' goal is to improve land-
+use categorization's accuracy by incorporating contextual 
+information and reducing the size of the input data. The method 
+uses frequency-based contextual analysis to extract relevant 
+information from the input data, followed by a gray-level vector 
+reduction to simplify the data. The reduced data is then used to 
+train a machine learning approach for. The authors demonstrate 
+that their method is more accurate and effective when the 
+findings are contrasted with those from other cutting-edge land-
+use identification techniques. The study analyses the 
+significance of this findings for future land-use identification 
+studies[2]. 
+A deep learning strategy for recognising metropolitan regions 
+from remote sensing photos is presented in this study. The 
+authors' objective is to use deep learning algorithms to improve 
+the precision and efficacy of urban area identification. The 
+suggested technique analyses the attributes of remote sensing 
+photos and identifies metropolitan regions based on patterns 
+and characteristics in the data using a deep neural network. 
+When compared to other cutting-edge techniques, the method's 
+results are evaluated, and the authors show that their method is 
+more accurate and efficient. The paper concludes with an 
+explanation of how this work may be interpreted for future 
+study in the field of urban area identification using remote 
+sensing images [3]. 
+Using 
+Google 
+Earth 
+Engine's 
+pixel-based 
+picture 
+categorization, this study gives a dataset for identifying the 
+borders of metropolitan areas in India. The authors aim to 
+provide a high-quality and reliable dataset for researchers and 
+practitioners working towards a profession in urban area 
+identification. The dataset was created for the study of 
+geographic data and visualization using cloud base platform 
+Google Earth Engine. The authors proposed a combination of 
+satellite imagery and other data resources to create the dataset, 
+and applied a pixel-based image classification algorithm to 
+identify urban surroundings. The dataset and the procedures 
+used to create it are described in great length in the research, 
+and highlights the key features and limitations of the dataset. 
+The authors also describe some initial results using the datasets, 
+and discuss the potential applications and future directions for 
+research using this dataset [4]. 
+The research focuses on identifying trends combining satellite 
+data and convolutional neural networks (CNNs), in emerging 
+countries, the density of urban homes is increasing. The goal is 
+to create a model that can anticipate events with precision 
+housing density in these areas. The authors used satellite 
+imagery as input and trained a CNN to recognize patterns and 
+structures in the data. As a consequence of the test data, it was 
+evident from the findings that the model could correctly 
+forecast the density of buildings. The study highlights the 
+potential of using CNNs and satellite imagery for analyzing 
+urban density of housing in developing countries [5]. 
+The categorization of land use in remote sensing pictures is 
+done in this article using convolutional neural networks 
+(CNNs). The author aims to develop a system that can 
+accurately identify and classify different types of land usage in 
+satellite images. The system is trained using a large dataset of 
+labelled remote sensing images. The performance shows that 
+the CNN-based approach outperforms traditional land use 
+classification 
+methods 
+in 
+terms 
+of 
+accuracies 
+and 
+computational efficiency. The article emphasises the potential 
+of CNNs for classifying land use and highlights the necessity 
+of having sizable annotated datasets for model training [6]. 
+The paper focuses on using Convolutional Neural Networks 
+(CNNs) to classify the degree of deprivation in slums areas with 
+very high-resolution (VHR) images. The authors aim to 
+develop a system that can accurately predict the level of 
+deprivation in slums areas based on the characteristics of the 
+built environment visible in the photos. The model is trained 
+using a dataset of annotated VHR images of slums. The 
+outcomes of the study demonstration that the CNN-based 
+approach is efficient to accurately predict the degree of 
+deprivation in slums based on the features of the built 
+environment visible in the images. The paper highlights the 
+potential of using CNNs and VHR imagery for understanding 
+the characteristics of slums and the level of deprivation 
+experienced by the residents [7]. 
+The research focuses on employing unsupervised deep learning 
+techniques for classification of remote sensing images. To 
+effectively categorise remote sensing photos into several land 
+cover categories, the authors suggest a new technique for 
+unsupervised deep feature extraction. The technique extracts 
+feature from the images using an autoencoder network, which 
+are subsequently utilised to train a classifier. The study's 
+findings demonstrate that the suggested unsupervised deep 
+feature extraction method surpasses more established 
+techniques for classifying remote sensing images in terms of 
+precision and computational efficiency. The promise of 
+unsupervised deep learning algorithms for remotely tracking 
+picture categorisation is highlighted in the paper, as is the 
+significance of feature extraction in this procedure [8]. 
+The study classifies building instances using street view 
+pictures. The authors want to create a model that can recognise 
+and categorise specific buildings in street view pictures. The 
+study's findings demonstrate that the suggested approach can 
+correctly classify buildings in the test data. The proposed 
+approach is trained using a collection of annotated street view 
+photos. The research emphasises the value of large annotated 
+datasets for training such models as well as the potential of 
+employing street view photos for developing instance 
+categorization. The authors then go into how the suggested 
+approach may be used in a variety of industries, such as real 
+estate, disaster response, and urban planning [9]. 
+In this study, ML techniques for planning urban land usage are 
+reviewed. The authors' goal is to give a summary of the many 
+machine learning approaches that have been used to solve 
+urban land use planning issues while highlighting their 
+advantages and disadvantages. The paper discusses a wide 
+range of subjects, including as urban growth projection, land 
+use change detection, and examination of urban land usage  
+suitability. The authors provide the findings of recent studies in 
+this area and talk about the various forms of data and techniques 
+employed in these applications. The potential of machine 
+learning to solve challenging urban land usage planning issues 
+is highlighted in the paper's conclusion, along with the need for 
+additional study to increase the precision and effectiveness of 
+these algorithms[10]. 
+The study focuses on the usage of ANNs and SVMs for picture 
+classification. The authors compare how well these two 
+machine learning algorithms perform when it comes to picture 
+classification tasks. A dataset of photographs is used in the 
+study to train and test the models. The findings demonstrate that 
+both SVMs and ANNs are effective for picture classification 
+and may attain high levels of accuracy, while ANNs typically 
+beat SVMs in terms of precision and computational 
+effectiveness. The research emphasises the potential of 
+employing both SVMs and ANNs for picture classification 
+tasks and emphasises how crucial it is to take into account the 
+data's properties and the desired outcomes when choosing the 
+best machine learning method [11]. 
+The paper proposed an overview of the use of machine learning 
+in urban spatial analysis. In addition to classifying trends and 
+gaps in the field, the authors hope to provide an overview of the 
+many machine learning techniques that have been used to solve 
+issues in urban settings. The study covers a range of topics, 
+including urban land usage planning, urban growth prediction, 
+urban land usage change identification, and urban heat island 
+analysis. Additionally, the authors suggest areas for future 
+research, including the integration of multiple sources of data 
+and the use of deep learning techniques [12]. 
+In the study , the usage of GIS and RS technologies is 
+investigated for the purpose of identifying and analysing 
+changes in land use patterns between urban and rural areas. In 
+order to track changes in land usage and cover over time, the 
+work probably entails gathering and analysing geospatial data, 
+such as satellite photography. The results of the research may 
+explain the dynamics of urbanisation and its consequences on 
+rural environment, agriculture, and other issues [13]. 
+High-resolution synthetic aperture radar (SAR) images are used 
+in the technique described in this study to identify floods in both 
+urban and rural locations. The suggested technique evaluates 
+SAR data from various sources and aims to offer conclusions 
+very instantly. The findings demonstrate that the suggested 
+strategy may accurately and quickly identify floods in both 
+urban and rural locations. The technique has the potential to be 
+used in numerous flood early warning and monitoring systems 
+[14]. 
+In both rural and urban settings, the study analyses how well 
+different 
+machine 
+learning 
+algorithms 
+perform 
+when 
+classifying satellite images. According to the findings, 
+depending on the region, the algorithms' performance differs, 
+with some algorithms performing better in rural than in urban 
+settings. Several algorithms were combined to reach the overall 
+optimum performance. The study emphasises how crucial it is 
+to take into account the environment's unique characteristics 
+when choosing a machine learning algorithm for classifying 
+satellite images [15]. 
+This study suggests a technique for identifying the urban-rural 
+border using data from optical and nocturnal lighting. To gather 
+data on land usage and land cover, the approach uses both 
+optical daytime imaging and night-time light data. The 
+suggested approach has the potential to be used in numerous 
+applications, including land use planning and monitoring 
+urbanisation [16]. 
+The technique described in this research uses Markov Random 
+Fields (MRF)-based super-resolution mapping to detect urban 
+trees in a very high resolution (VHR) photographs. Compared 
+to conventional techniques, the MRF model improves tree 
+detection accuracy by accounting for the spatial interactions 
+between the trees and the structures nearby. The outcomes 
+demonstrate that this technique is successful at mapping urban 
+trees in VHR photos [17]. 
+The research focuses on applying machine learning approaches 
+to pinpoint mountainous areas with rural residential land that is 
+susceptible to desertion. The study makes use of data to develop 
+models that forecast the possibility of land abandonment 
+depending on a number of variables, including infrastructure, 
+land use, and population density. The findings demonstrate that 
+machine learning can be a useful technique for anticipating land 
+abandonment in rural areas, giving decision-makers and land 
+managers important information to assist solve the problem 
+[18]. 
+The study explains how to define metropolitan zones using a 
+machine learning method. The system precisely locates and 
+maps the boundaries of metropolitan regions using satellite 
+images and other data sources. The outcomes show how well 
+the algorithm defines urban areas precisely, which is important 
+for applications like resource management and urban planning. 
+The study emphasises how machine learning can be used to 
+analyse and comprehend the spatial patterns of urbanisation 
+[19]. 
+The approach for autonomous navigation described in this 
+study uses visual data. The system consists of a visual 
+positioning system (VPS) that locates the device in an indoor 
+or outdoor area using computer vision techniques. The VPS 
+functions by identifying elements in the environment and 
+comparing them to a previously created map, which enables the 
+device to estimate its position in real-time. The system has 
+undergone testing in a variety of indoor and outdoor settings, 
+and results in terms of precision and effectiveness have been 
+encouraging [20]. 
+ 
+ 
+ 
+Table.1. Comparison of Some Paper 
+ 
+Paper 
+Dataset 
+Techniques 
+[1] 
+He et al. 
+(2021) 
+ImageNet, 
+ADE20K, 
+Camvid 
+CNN(74%), 
+DCNN(81%), 
+SVM(77%) 
+[4] 
+Guo et al. 
+(2019) 
+Beijing City 
+CNN (100%) 
+[9] 
+Romero et al 
+(2015) 
+UC-Merced 
+ 
+CNN(84.53%),  
+SVM() 
+ 
+III. 
+METHODOLOGY 
+In this study, a model has been constructed for classifying 
+urban and rural environments using pictures. The images are 
+divided into two groups by the machine learning model. The 
+proposed work's whole workflow is depicted in Figure 1, 
+starting with data collection, pre-processing of the data, feature 
+definition, and feature selection, followed by testing and 
+training of the model, which provide the final results. The 
+dataset of photos was transformed into feature vectors using a 
+computer vision-based method before being given to the 
+ML algorithms. 
+ 
+ 
+The Identification of rural or urban surroundings System 
+ 
+ 
+ 
+Fig.1: Block diagram of the system 
+ 
+ 
+       
+ Algorithm 1:  
+1. Input dataset 
+2. for every image in the dataset: 
+3.      Resize image to 200 x 200 px 
+4.      Convert to Grayscale 
+5.      BRISK features description 
+6. K- means Clustering  
+7. K-fold cross validation 
+8. Training 
+and 
+testing 
+machine 
+learning 
+classifiers 
+9. Analysis of performance of classifiers 
+10. end of Algorithm 
+ 
+ 
+A) About the data set: 
+Images from both urban and rural surroundings are collected 
+for creating the dataset. Dataset consists total 2000 images, 
+1000 of which are of urban regions and 1000 are of rural 
+regions. 
+ 
+B) Image Processing: 
+The Identification of rural or urban surroundings system used 
+three image processing techniques:-  
+Resize the photo:  
+Resizing is the process of altering an image's size, either 
+making it smaller or larger. This is a typical job in image 
+processing since it may be used to either reduce the size of huge 
+photos or improve the visibility of small ones. Various 
+algorithms, such as nearest neighbour, can be used for resizing. 
+The aspect ratio must be taken consideration when resizing an 
+image to prevent distortion. 
+ 
+   
+ 
+                  
+Fig. 2. Images after resizing into 200 x 200 
+ 
+Grayscale to the cropped images:  
+Images are represented using shades of grey in the colour space 
+known as grayscale. To apply grayscale to an image, its native 
+colour space must be changed to grayscale. This method can be 
+helpful in image processing since it can lessen the amount of 
+information required to represent a picture and facilitate 
+processing. When you crop an image, you choose a certain area 
+and eliminate the rest.  
+ 
+   
+ 
+            
+Fig. 3. Gray-Scaled Images 
+ 
+Edge detection (Prewitt):  
+In image processing, edge detection involves locating the 
+boundaries between objects in an image. One of several edge 
+detection techniques is the Prewitt operator, which determines 
+an image's gradient in both the horizontal and vertical 
+dimensions. The edge map, which indicates the regions of the 
+picture where there are noticeable variations in intensity, may 
+then be made by combining the resultant gradients. For 
+applications like object recognition, picture segmentation, and 
+feature extraction, edge detection is a frequent preprocessing 
+step in image processing. 
+ 
+   
+ 
+               
+Fig.4.Prewitt Edge detection images 
+ 
+C) Feature Description (BRISK Feature Descriptor): 
+A feature descriptor is a mathematical function or algorithm 
+that is used to extract information from an image or other type 
+of data. In the case of the Identification of rural or urban 
+surroundings system, the brisk feature descriptor is used to 
+analyze the visual characteristics of the location being 
+examined. The brisk feature descriptor is a popular feature 
+extraction technique that is used in computer vision 
+applications to identify distinctive visual features such as 
+corners, edges, and blobs.  
+By using the brisk feature descriptor in the Identification of 
+rural or urban surroundings system, the system can identify 
+specific visual features that are characteristic of rural or urban 
+areas. For example, the model may detect that a location is 
+rural if it contains more vegetation, fewer buildings, and a 
+lower density of population. Alternatively, the system may 
+identify that an area is urban if it contains more buildings, 
+more roads, and a higher density of population.  
+Overall, the use of the brisk feature descriptor in the 
+Identification of rural or urban surroundings system helps to 
+provide an objective and accurate analysis of a given location 
+based on its visual characteristics. 
+  
+D) Applying K-means Clustering: 
+In this clustering algorithm the dataset is grouped into various 
+clusters. The value of K should always be odd because if the 
+value of K clusters is even then there can be ties in classification 
+so to avoid the tie the value must be odd. In this work the K 
+value was kept constant and accuracy of all 5 classifiers was 
+compared, so that the most efficient value of K could be 
+obtained. After comparing the accuracy for all the values of K, 
+when K value was 5 Random Forest provided the highest of 
+99.72%. So, the value of K Means Cluster is 5. Table.2. shows 
+Accuracy of classifiers for value K=5. 
+ 
+Table.2. Accuracy of classifiers for 5 Clusters 
+ 
+Classifier 
+Accuracy 
+Random Forest 
+99.72% 
+Decision Tree 
+76.70% 
+KNN 
+77.52% 
+SVM 
+72.01% 
+Logistics Regression 
+60% 
+ 
+E) Training & testing classifiers: 
+For every classifier, the dataset must be divided into a 
+specific proportion (mostly 70% for training and 30% for 
+testing). The same thing is done here, the dataset consists of 
+2000 images including rural and urban areas. Out of which the 
+model has been trained on 1400 images and has been tested on 
+600 images. Proportion for dividing the data into training and 
+testing must be proper, if it is not then the accuracy can change 
+drastically. (Note: - The training and testing data includes both 
+rural and urban areas images) Training data is usually larger 
+than testing data because, by doing so models can learn 
+meaningful patterns, hence it is necessary to pass a big portion 
+of training data for training the model. Once the model is 
+trained, it inherits the patterns from the trained data and makes 
+predictions on the basis of testing data. To determine the 
+accuracy 5 different classifiers are used which provide 5 
+different accuracy and later the obtained result is compared. 
+1) Random Forest Algorithm 
+2) Decision Tree Classifier 
+3) KNN 
+4) SVM 
+5) Logistics Regression 
+ 
+Random Forest Algorithm: 
+Random forest is a machine learning classifier which is widely 
+used when dealing with the problems related to classification. 
+As shown in Fig. when the K number of clusters were 5 
+Random Forest provided the highest accuracy of 99.79% Fig. 
+shows the ROC curve, this curve is a graph which shows the 
+performance of the classifier. There are 2 parameters plotted on 
+the curve.  
+ 
+ 
+ 
+ 
+Fig.5.  ROC curve provided by Random Forest Algorithm 
+ 
+Decision Tree Classifier: 
+Decision Tree is a classifier which comprises nodes. It has a 
+tree-like structure and on the basis of impurity it determines 
+where the next node should go. Further the tree is divided into 
+internal nodes and branches. A decision tree is a method used 
+for classification and prediction. It is a tree-like structure that 
+represents different possible outcomes or decisions based on 
+certain input conditions. The tree branches out based on 
+specific conditions or rules, and each branch leads to a specific 
+outcome or decision. The root node represents the initial input, 
+while the leaf nodes represent the final decision. It’s commonly 
+used in machine learning, operations research, and decision 
+making. Decision Tree Classifier provided the accuracy of 
+82.91%. 
+ 
+K Nearest Neighbour (KNN): 
+The simplest machine learning technique. In this algorithm K 
+number of neighbors are selected and then distance of K nearest 
+neighbors is calculated. Then the neighbors which are nearest 
+are taken according to their particular Euclidean distance. Then 
+the classifier is ready. The main advantage of KNN is its 
+simplicity and flexibility, however, it can be computationally 
+expensive for large datasets. KNN Classifier provided the 
+accuracy of 98.92%. 
+ 
+SVM: 
+SVM is a well-known technique in supervised learning, 
+which can be used for categorisation and regression problems. 
+However, it is commonly employed for classification problems 
+in machine learning. The primary objective of the SVM 
+algorithm is to identify the optimal line or decision boundary in 
+n-dimensional space, enabling us to classify new data points 
+into the appropriate category in the future. Here the Linear 
+kernel is used which provides 73.20% accuracy in predicting 
+the classification of new data points. 
+ 
+Logistics Regression: 
+It is a data analysis approach that uses mathematics to 
+determine the correlations between two data variables. The 
+connection is then used to forecast the value of one of the 
+parameters depending on the other. Predictions often have a 
+limited number of outcomes, such as yes or no. when liblinear 
+solver is used it gives accuracy 59.01%. 
+ 
+F) K-Fold Cross Validation: 
+It divides the dataset into K numbers/samples of groups into the 
+same size. These are known as folds. Here the different 
+prediction function k folds are used for the learning set and the 
+remaining folds are used for the test set. In this work the K 
+value is 3. After comparing the average accuracy for all the 
+values of K, when K value was 5 Random Forest provided the 
+highest of 99.82%. So, the value of K in K-Fold is 3. Table.3. 
+shows average accuracy of different classifiers using k-fold 
+with k value 5. 
+ 
+Table.3. Accuracy of classifiers using k-fold for value K=5 
+ 
+Classifier 
+Accuracy 
+Random Forest 
+99.79% 
+Decision Tree 
+82.91% 
+KNN 
+98.92% 
+SVM 
+73.20% 
+Logistics Regression 
+59.01% 
+ 
+IV. 
+CLASSIFIER MODELS RESULT 
+Table.4. Performance evaluation 
+ 
+Classifier 
+Name 
+Accuracy 
+Recall 
+Precision 
+F1-Score 
+Random 
+Forest 
+99.79 
+96.33 
+92.92 
+94.59 
+Decision 
+Tree 
+82.9 
+76.34 
+74.92 
+75.39 
+KNN 
+98.92 
+97.61 
+98.82 
+99.59 
+SVM 
+73.20 
+71.55 
+70.08 
+73.78 
+Logistics 
+Regression 
+59.01 
+58.23 
+53.31 
+60.17 
+ 
+After the value of K and k fold is 5, calculated all the 
+parameters, because when the value of K Cluster is kept 3 the 
+classifier provides efficient results. 
+ 
+V. 
+RESULT 
+ 
+Fig.6. Detection of Rural area 
+ 
+As shown in Fig.6 the model is able to identify the rural area 
+easily. And the message received is “This is a Rural image”. 
+Now let’s input an urban image to see if the model can detect 
+the urban or rural. 
+ 
+Fig.7. Detection of Urban area 
+ 
+As shown in Fig.7 the model is able to identify the area easily. 
+And the message received is “This is an Urban image”.  
+ 
+VI. 
+Conclusion and Future Scope 
+Urban and Rural identification is a challenging problem 
+because there is no clear identification line between two areas. 
+Here, we presented an approach for identifying rural and urban 
+areas, which tended to result in identification maps that were 
+more useful. With this method, it would be possible to classify 
+each building's land use with comparatively high accuracy. The 
+images dataset was provided to various machine learning 
+classifiers, including SVM, RF, Logistics regression, Decision 
+Tree, KNN, etc. The results indicates that BRISK is a better 
+feature extraction approach for feature vectors to be extracted 
+for this specific research, with Random Forest giving the 
+highest accuracy of 99.79%. For further work, more data may 
+be included to enhance classification performance, such as text 
+descriptions attached to social media photographs and brand 
+names and other text information that appears in photos. 
+ 
+REFERENCES 
+[1] 
+He, N., & Li, G. (2021). Urban neighbourhood environment assessment 
+based on street view image processing: A review of research 
+trends. Environmental Challenges, 4, 100090. 
+[2] 
+Gong, P., & Howarth, P. J. (1992). Frequency-based contextual 
+classification 
+and 
+gray-level 
+vector 
+reduction 
+for 
+land-use 
+identification. Photogrammetric Engineering & Remote Sensing. 
+[3] 
+Guo, J., Ren, H., Zheng, Y., Nie, J., Chen, S., Sun, Y., & Qin, Q. (2019, 
+July). Identify urban area from remote sensing image using deep 
+learning method. In IGARSS 2019-2019 IEEE International Geoscience 
+and Remote Sensing Symposium (pp. 7407-7410). IEEE. 
+[4] 
+Goldblatt, R., You, W., Hanson, G., & Khandelwal, A. K. (2016). 
+Detecting the boundaries of urban areas in India: A dataset for pixel-
+based image classification in google earth engine. Remote Sensing, 8(8), 
+634. 
+[5] 
+ Sanya, R., & Mwebaze, E. (2020). Identifying patterns in urban housing 
+density in developing countries using convolutional networks and 
+satellite imagery. Heliyon, 6(12), e05617. 
+[6] 
+Castelluccio, M., Poggi, G., Sansone, C., & Verdoliva, L. (2015). Land 
+use classification in remote sensing images by convolutional neural 
+networks. arXiv preprint arXiv:1508.00092.  
+[7] 
+Ajami, A., Kuffer, M., Persello, C., & Pfeffer, K. (2019). Identifying a 
+slums’ degree of deprivation from VHR images using convolutional 
+neural networks. Remote Sensing, 11(11), 1282.  
+[8] 
+Romero, A., Gatta, C., & Camps-Valls, G. (2015). Unsupervised deep 
+feature extraction for remote sensing image classification. IEEE 
+Transactions on Geoscience and Remote Sensing, 54(3), 1349-1362.  
+[9] 
+Kang, J., Körner, M., Wang, Y., Taubenböck, H., & Zhu, X. X. (2018). 
+Building instance classification using street view images. ISPRS journal 
+of photogrammetry and remote sensing, 145, 44-59.  
+[10] Chaturvedi, V., & de Vries, W. T. (2021). Machine learning algorithms 
+for urban land use planning: A review. Urban Science, 5(3), 68. 
+[11] Thai, L. H., Hai, T. S., & Thuy, N. T. (2012). Image classification using 
+support vector machine and artificial neural network. International 
+Journal of Information Technology and Computer Science, 4(5), 32-38. 
+[12] Casali, Y., Yonca, N. A., Comes, T., & Casali, Y. (2022). Machine 
+learning 
+for 
+spatial 
+analyses 
+in 
+urban 
+areas: 
+a 
+scoping 
+review. Sustainable Cities and Society, 104050.  
+[13] Belaid, M. (2003, December). Urban-rural land use change detection and 
+analysis using GIS and RS technologies. In Proceedings of the 2nd FIG 
+regional conference, December (pp. 2-5). 
+[14] Mason, D. C., Davenport, I. J., Neal, J. C., Schumann, G. J. P., & Bates, 
+P. D. (2012). Near real-time flood detection in urban and rural areas 
+using 
+high-resolution 
+synthetic 
+aperture 
+radar 
+images. IEEE 
+transactions on Geoscience and Remote Sensing, 50(8), 3041-3052.  
+[15] Rahman, A., Abdullah, H. M., Tanzir, M. T., Hossain, M. J., Khan, B. 
+M., Miah, M. G., & Islam, I. (2020). Performance of different machine 
+learning algorithms on satellite image classification in rural and urban 
+setup. Remote Sensing Applications: Society and Environment, 20, 
+100410. 
+[16] Chen, X., Jia, X., & Pickering, M. (2019, July). Urban-Rural Fringe 
+Recognition with the Integration of Optical and Nighttime Lights Data. 
+In IGARSS 2019-2019 IEEE International Geoscience and Remote 
+Sensing Symposium (pp. 7435-7438). IEEE. 
+[17] Ardila, J. P., Tolpekin, V. A., Bijker, W., & Stein, A. (2011). Markov-
+random-field-based super-resolution mapping for identification of urban 
+trees in VHR images. ISPRS journal of photogrammetry and remote 
+sensing, 66(6), 762-775. 
+[18] Xu, F., Ho, H. C., Chi, G., & Wang, Z. (2019). Abandoned rural 
+residential land: Using machine learning techniques to identify rural 
+residential land vulnerable to be abandoned in mountainous 
+areas. Habitat International, 84, 43-56. 
+[19] Arribas-Bel, D., Garcia-López, M. À., & Viladecans-Marsal, E. (2021). 
+Building (s and) cities: Delineating urban areas with a machine learning 
+algorithm. Journal of Urban Economics, 125, 103217. 
+[20] Anup, S., Goel, A., & Padmanabhan, S. (2017, November). Visual 
+positioning 
+system 
+for 
+automated 
+indoor/outdoor 
+navigation. 
+In TENCON 2017-2017 IEEE region 10 conference (pp. 1027-1031). 
+IEEE. 
